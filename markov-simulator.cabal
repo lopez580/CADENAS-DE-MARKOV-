@@ -1,0 +1,18 @@
+cabal-version:      2.4
+name:               markov-simulator
+version:            0.1.0.0
+build-type:         Simple
+
+library
+  exposed-modules:  Types, Matrix, Markov, Simulation, Protocol, Server
+  hs-source-dirs:   src
+  build-depends:    base ==4.17.*, random ==1.2.*, network ==3.1.*
+  default-language: Haskell2010
+  ghc-options:      -Wall
+
+executable markov-server
+  main-is:          Main.hs
+  hs-source-dirs:   app
+  build-depends:    base ==4.17.*, markov-simulator
+  default-language: Haskell2010
+  ghc-options:      -Wall
